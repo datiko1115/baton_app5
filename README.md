@@ -33,7 +33,7 @@
 - belongs_to :users
 - has_one :purchases
 
-## purchasesテーブル
+## ordersテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user_id   | references | null: false, foreign_key: true |
@@ -51,7 +51,7 @@
 | prefectures_id | string     | null: false                    |
 | address        | text       | null: false                    |
 | building       | text       | null: false                    |
-| phone          | integer    | null: false                    |
+| phone          | string     | null: false                    |
 | purchases_id   | references | null: false, foreign_key: true |
 
 ### Association
