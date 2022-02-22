@@ -30,8 +30,8 @@
 | user_id      | references  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- has_one :purchases
+- belongs_to :user
+- has_one :order
 
 ## ordersテーブル
 | Column    | Type       | Options                        |
@@ -40,19 +40,19 @@
 | item_id   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- belongs_to :items
-- has_one :addresses
+- belongs_to :user
+- belongs_to :item
+- has_one :address
 
 ## addressesテーブル
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postcode       | string     | null: false                    |
-| prefectures_id | string     | null: false                    |
+| prefectures_id | integer    | null: false                    |
 | address        | text       | null: false                    |
-| building       | text       | null: false                    |
+| building       | text       |                                |
 | phone          | string     | null: false                    |
-| purchases_id   | references | null: false, foreign_key: true |
+| order_id       | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :purchases
+- belongs_to :order
