@@ -48,7 +48,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postcode       | string     | null: false                    |
-| prefectures_id | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | address        | string     | null: false                    |
 | building       | string     |                                |
 | phone          | string     | null: false                    |
