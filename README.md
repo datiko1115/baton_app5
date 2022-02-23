@@ -49,8 +49,8 @@
 | -------------- | ---------- | ------------------------------ |
 | postcode       | string     | null: false                    |
 | prefectures_id | integer    | null: false                    |
-| address        | text       | null: false                    |
-| building       | text       |                                |
+| address        | string     | null: false                    |
+| building       | string     |                                |
 | phone          | string     | null: false                    |
 | order          | references | null: false, foreign_key: true |
 
