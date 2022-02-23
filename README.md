@@ -17,17 +17,17 @@
 - has_many :purchases
 
 ## itemsテーブル
-| Column       | Type        | Options                        |
-| ------------ | ----------- | ------------------------------ |
-| item_name    | string      | null: false                    |
-| description  | text        | null: false                    |
-| category_id  | integer     | null: false                    |
-| price        | integer     | null: false                    |
-| condition_id | integer     | null: false                    |
-| recipient_id | integer     | null: false                    |
-| area_id      | integer     | null: false                    |
-| shipment_id  | integer     | null: false                    |
-| user_id      | references  | null: false, foreign_key: true |
+| Column         | Type        | Options                        |
+| -------------- | ----------- | ------------------------------ |
+| item_name      | string      | null: false                    |
+| description    | text        | null: false                    |
+| category_id    | integer     | null: false                    |
+| price          | integer     | null: false                    |
+| condition_id   | integer     | null: false                    |
+| recipient_id   | integer     | null: false                    |
+| prefectures_id | integer     | null: false                    |
+| shipment_id    | integer     | null: false                    |
+| user           | references  | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -36,8 +36,8 @@
 ## ordersテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| user_id   | references | null: false, foreign_key: true |
-| item_id   | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
+| item      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -52,7 +52,7 @@
 | address        | text       | null: false                    |
 | building       | text       |                                |
 | phone          | string     | null: false                    |
-| order_id       | references | null: false, foreign_key: true |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :order
