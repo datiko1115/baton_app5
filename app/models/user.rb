@@ -14,15 +14,11 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
   
-  FIRST_NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze
-  validates_format_of :first_name, with: FIRST_NAME_REGEX, message: 'is invalid. Input full-width characters'
+  NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze
+  validates_format_of :first_name, with: NAME_REGEX, message: 'is invalid. Input full-width characters'
+  validates_format_of :last_name, with: NAME_REGEX, message: 'is invalid. Input full-width characters'
 
-  LAST_NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze
-  validates_format_of :last_name, with: LAST_NAME_REGEX, message: 'is invalid. Input full-width characters'
-
-  FIRST_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
-  validates_format_of :first_kana, with: FIRST_KANA_REGEX, message: 'is invalid. Input full-width katakana characters'
-
-  LAST_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
-  validates_format_of :last_kana, with: LAST_KANA_REGEX, message: 'is invalid. Input full-width katakana characters'
+  KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
+  validates_format_of :first_kana, with: KANA_REGEX, message: 'is invalid. Input full-width katakana characters'
+  validates_format_of :last_kana, with: KANA_REGEX, message: 'is invalid. Input full-width katakana characters'
 end
