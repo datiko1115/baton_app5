@@ -42,10 +42,20 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("First kana can't be blank")
       end
+      it "first_kanaは、カタカナでの入力が必須であること" do
+        @user.first_kana = 'たぬき'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First kana is invalid. Input full-width katakana characters")
+      end
       it "last_kanaが空では登録できない" do
         @user.last_kana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Last kana can't be blank")
+      end
+      it "last_kanaは、カタカナでの入力が必須であること" do
+        @user.last_kana = 'たろう'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last kana is invalid. Input full-width katakana characters")
       end
       it "emailが空では登録できない" do
         @user.email = ''
