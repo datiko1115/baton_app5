@@ -17,6 +17,9 @@ class ItemsController < ApplicationController
     end
   end 
 
+  def show
+  end 
+
   def move_to_index
     unless user_signed_in?
       redirect_to new_user_session_path
