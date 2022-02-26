@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
   end 
 
   def show
+    @item = item.find(params[:id])
   end 
 
   def move_to_index
