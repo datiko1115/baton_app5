@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show,]
+  before_action :move_to_index, except: [:index, :show, :edit]
   before_action :ensure_correct_user, only:[:edit]
 
   def index
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to item_path(item.id)
+      redirect_to item_path(@item.id)
     else
       render :edit
     end
