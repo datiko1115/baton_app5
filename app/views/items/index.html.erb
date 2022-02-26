@@ -127,10 +127,10 @@
       新規投稿商品
     </div>
     <ul class='item-lists'>
-        <%# @items.each do |item| %>
-          <%# render partial: "item", locals: { item: item } %>
-        <%#end%>
-      <%# if @items.empty?  %>
+      <% @items.each do |item| %>
+        <%= render partial: "item", locals: { item: item } %>
+      <%end%>
+      <% if @items.empty?  %>
         <li class='list'>
           <%= link_to '#' do %>
           <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
@@ -148,7 +148,7 @@
           </div>
           <% end %>
         </li>
-      <%# end %>
+      <% end %>
     </ul>
   </div>
   
