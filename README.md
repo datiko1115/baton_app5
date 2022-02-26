@@ -19,7 +19,7 @@
 ## itemsテーブル
 | Column         | Type        | Options                        |
 | -------------- | ----------- | ------------------------------ |
-<!-- | item_name      | string      | null: false                    | -->
+| item_name      | string      | null: false                    |
 | description    | text        | null: false                    |
 | category_id    | integer     | null: false                    |
 | price          | integer     | null: false                    |
