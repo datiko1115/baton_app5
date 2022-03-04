@@ -14,7 +14,7 @@
 
 ### Association
 - has_many :items
-- has_many :purchases
+- has_many :orders
 
 ## itemsテーブル
 | Column         | Type        | Options                        |
@@ -49,6 +49,7 @@
 | -------------- | ---------- | ------------------------------ |
 | postcode       | string     | null: false                    |
 | prefecture_id  | integer    | null: false                    |
+| city           | string     | null: false                    |
 | address        | string     | null: false                    |
 | building       | string     |                                |
 | phone          | string     | null: false                    |
