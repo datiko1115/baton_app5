@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_one :order
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -21,6 +21,6 @@ class Item < ApplicationRecord
   validates :recipient_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :shipment_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :image, presence: true
+  validates :images, presence: true
 
 end
