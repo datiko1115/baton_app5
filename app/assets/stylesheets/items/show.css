@@ -25,12 +25,18 @@
   font-size: 25px;
 }
 
+.main-image {
+height: 50vh;
+width: 60vw;
+min-height: 500px;
+background-color: rgb(205, 202, 202);
+object-fit: contain;
+}
+
 .item-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
-  object-fit: contain;
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
 }
 
 .item-price-box {
@@ -205,3 +211,22 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+/* .other-images {
+  display: flex;
+}
+
+.other-image {
+  margin-right: 10px;
+}
+
+.image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+.main-image {
+  height: 200px;
+  width: 200px;
+} */
