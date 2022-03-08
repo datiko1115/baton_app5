@@ -25,12 +25,18 @@
   font-size: 25px;
 }
 
+.main-image {
+height: 50vh;
+width: 60vw;
+min-height: 500px;
+background-color: rgb(205, 202, 202);
+object-fit: contain;
+}
+
 .item-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  background-color: rgb(205, 202, 202);
-  object-fit: contain;
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
 }
 
 .item-price-box {
