@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :items
   has_many :orders
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :buyer_or_customer
+
   validates :nickname, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
