@@ -1,4 +1,4 @@
-<li class='list'>
+<li class='list'> 
   <%= link_to item_path(item.id) do %>
   <div class='item-img-content'>
     <%= image_tag item.images[0], class: "item-img" %>
@@ -11,6 +11,7 @@
   </div>
   <div class='item-info'>
     <h3 class='item-name'>
+  
       <%= item.item_name %>
     </h3>
     <div class='item-price'>
