@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :first_kana, presence: true
   validates :last_kana, presence: true
   validates :birthday, presence: true
+  validates :virtualfitting_id, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
