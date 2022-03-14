@@ -35,6 +35,7 @@
     <% elsif  user_signed_in?%>
       <%unless @item.order.present? %>
         <%= link_to "購入画面に進む", item_orders_path(@item.id),class:"item-red-btn"%>
+        <%= link_to "バーチャル試着を試す", item_virtual_fittings_path(@item.id), class:"item-destroy" %>
       <% end %>
     <% end %>
 

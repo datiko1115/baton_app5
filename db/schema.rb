@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_015645) do
     t.string "last_kana", null: false
     t.string "nickname", null: false
     t.date "birthday", null: false
+    t.integer "buyer_or_customer_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
