@@ -7,7 +7,7 @@ class VirtualFittingsController < ApplicationController
      #item_image.format("jpg")
      #item_image.write("item_image.png")
      #item_image.variant.auto_orient
-    result = user_image.composite(item_image) do |config|
+    result = user_image.composite(item_image) do |config| 
       config.compose 'Over'
       config.gravity 'NorthWest'
       config.geometry '+0+0'
