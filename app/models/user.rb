@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :orders
+  has_many :virtual_fitting
+  has_many_attached :images
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :buyer_or_customer
