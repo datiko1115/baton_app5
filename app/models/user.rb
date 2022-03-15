@@ -18,10 +18,10 @@ class User < ApplicationRecord
   validates :first_kana, presence: true
   validates :last_kana, presence: true
   validates :birthday, presence: true
-  validates :virtualfitting_id, presence: true
+  validates :buyer_or_customer_id, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers', on: :create
   
   NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze
   validates_format_of :first_name, with: NAME_REGEX, message: 'is invalid. Input full-width characters'
