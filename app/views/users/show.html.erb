@@ -5,7 +5,11 @@
     <h2 class='title'><%= @nickname %>さん</h2>
 
       <div class="box1">
-        <p>ここに文章</p>
+        <% unless  @user.user_comment.empty? %>
+          <p><%= @user.user_comment %></p>
+        <% else %>
+          <p>自己紹介文</p>
+        <% end %>
       </div>
     <% if current_user.id.to_s == params[:id] %>
       <%= link_to "プロフィールを編集する", edit_user_path(current_user), class:"edit-profile" %>
