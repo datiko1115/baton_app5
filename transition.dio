@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="yrEnSp0HsiIsARvUnmrg" name="ページ1">
-        <mxGraphModel dx="626" dy="207" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="553" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -31,7 +31,7 @@
                 <mxCell id="14" value="管理者マイページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="240" y="290" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="ユーザーマイページ&lt;br&gt;（買付品、出品一覧ページ）" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="15" value="ユーザーマイページ&lt;br&gt;（買付品一覧ページ）" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="240" y="360" width="160" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="商品詳細ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
@@ -40,7 +40,7 @@
                 <mxCell id="17" value="買付可能品出品ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="480" y="290" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="42" edge="1">
+                <mxCell id="43" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="18" target="42">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="買付可能品一覧ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
@@ -142,19 +142,19 @@
                         <mxPoint x="480" y="660" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="45" value="" style="edgeStyle=none;html=1;" parent="1" source="42" target="44" edge="1">
+                <mxCell id="45" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="42" target="44">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="42" value="買付可能品詳細ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="42" value="買付可能品詳細ページ" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
                     <mxGeometry x="720" y="360" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="買付可能品購入ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="44" value="買付可能品購入ページ" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
                     <mxGeometry x="960" y="360" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="46" value="バーチャル試着ページ" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="46" value="バーチャル試着ページ" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
                     <mxGeometry x="480" y="710" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="47" value="" style="edgeStyle=none;html=1;" parent="1" edge="1">
+                <mxCell id="47" value="" style="edgeStyle=none;html=1;" edge="1" parent="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="440" y="730" as="sourcePoint"/>
                         <mxPoint x="480" y="730" as="targetPoint"/>
