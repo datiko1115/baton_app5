@@ -12,7 +12,7 @@ class VirtualFittingsController < ApplicationController
       config.gravity 'NorthWest'
       config.geometry '+0+0'
     end
-    result.format("jpg")
+    result.format("jpg") 
     result.write("app/assets/images/virtualfitting#{current_user.id}.jpg")
   end
 end
