@@ -6,7 +6,8 @@
     </h2>
   <%# baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaru %>
     <div class="virtual-wrap">
-      <%= image_tag asset_path("virtualfitting#{current_user.id}.jpg"), class: "virtual-image1" %><br>
+      <%#= image_tag asset_path("virtualfitting#{current_user.id}.jpg"), class: "virtual-image1" %><br>
+      <%= image_tag "/assets/virtualfitting#{current_user.id}.jpg", class: "virtual-image1" %>
     </div>
   <%# baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaru %>
     <%= link_to "商品ページに戻る", item_path(@item.id), class:"item-destroy" %>
