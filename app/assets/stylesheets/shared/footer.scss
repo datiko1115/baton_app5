@@ -66,3 +66,25 @@
 .footer>p {
   font-size: 14px;
 }
+
+.nav1 {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 8vh 0 0;
+}
+
+.lists-right1 {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.company-login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-left: 2vw;
+  color: #FFF;
+}
