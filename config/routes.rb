@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   }
   
   root to: 'items#index'
-  resources :admins, only: :show
+  resources :admins, only: [:show]
   resources :users, only: [:show, :edit, :update] 
-  resources :users, only: :show
+  resources :users, only: [:show]
+  resources :admin_items, only: [:new, :create]
   resources :items do
     resources :virtual_fittings, only: [:index]
     resources :orders, only: [:index, :create]

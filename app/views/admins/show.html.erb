@@ -1,13 +1,10 @@
 <%= render "shared/header" %>
 <div class='main'>
-  <div class='profile-contents'>
-    <h2 class='title'><%= @adminname %>さん</h2>
-  </div>
   
   <div class='profile-contents'>
     <h2 class='title'><%= @adminname %>さんの出品一覧</h2>
     <div class="subtitle" >
-      投稿商品
+      買付可能商品
     </div>
     <ul class='item-lists'>
         <li class='list'>
@@ -30,7 +27,7 @@
     </ul>
   </div>
 </div>
-<%= link_to("#", class: 'purchase-btn') do %>
+<%= link_to(new_admin_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
