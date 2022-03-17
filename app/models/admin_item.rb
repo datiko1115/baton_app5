@@ -1,0 +1,2 @@
+class AdminItem < ApplicationRecord
+end
