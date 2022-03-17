@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   }
   
   root to: 'items#index'
+  resources :admins, only: :show
   resources :users, only: [:show, :edit, :update] 
   resources :users, only: :show
   resources :items do
