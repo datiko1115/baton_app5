@@ -13,6 +13,10 @@ class VirtualFittingsController < ApplicationController
       config.geometry '+0+0'
     end
     result.format("jpg") 
-    result.write("public/assets/virtualfitting#{current_user.id}.jpg")
+     if Rails.env.production? 
+      result.write("public/assets/virtualfitting#{current_user.id}.jpg")
+     else 
+      result.write("public/images/virtualfitting#{current_user.id}.jpg")
+     end
   end
 end
