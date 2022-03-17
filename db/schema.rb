@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_17_083113) do
+ActiveRecord::Schema.define(version: 2022_03_17_130825) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(version: 2022_03_17_083113) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_addresses_on_order_id"
+  end
+
+  create_table "admin_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "admin_item_name", null: false
+    t.text "admin_description", null: false
+    t.integer "category_id", null: false
+    t.integer "proper_price", null: false
+    t.integer "price", null: false
+    t.bigint "admin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_admin_items_on_admin_id"
   end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -105,6 +117,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_083113) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "orders"
+  add_foreign_key "admin_items", "admins"
   add_foreign_key "items", "users"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"

@@ -1,13 +1,13 @@
 # テーブル設計 
 
-## companiesテーブル
+## adminテーブル
 | Column             | Type        | Options                        |
 | ------------------ | ----------- | ------------------------------ |
 | email              | string      | null: false, unique: true      |
 | encrypted_password | text        | null: false                    |
-| company_name       | integer     | null: false                    |
+| admin_name       | integer     | null: false                    |
 ### Association
-has_many :buyer_items
+has_many :admin_items
 
 
 ## usersテーブル
@@ -25,21 +25,21 @@ has_many :buyer_items
 ### Association
 - has_many :items
 - has_many :orders
-- has_many :buyer_items
+- has_many :admin_items
 - has_many :buyer_orders
 
 
-## buyer_itemsテーブル
-| Column         | Type        | Options                        |
-| -------------- | ----------- | ------------------------------ |
-| item_name      | string      | null: false                    |
-| description    | text        | null: false                    |
-| category_id    | integer     | null: false                    |
-| proper_price   | integer     | null: false                    |
-| price          | integer     | null: false                    |
-| company        | references  | null: false, foreign_key: true |
+## admin_itemsテーブル
+| Column                | Type        | Options                        |
+| --------------------- | ----------- | ------------------------------ |
+| admin_item_name       | string      | null: false                    |
+| admin_description     | text        | null: false                    |
+| category_id           | integer     | null: false                    |
+| proper_price          | integer     | null: false                    |
+| price                 | integer     | null: false                    |
+| admin                 | references  | null: false, foreign_key: true |
 ### Association
-- belongs_to :company
+- belongs_to :admin
 - belongs_to :user
 - has_one :buyer_order
 - has_one :item
@@ -49,7 +49,7 @@ has_many :buyer_items
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | user       | references | null: false, foreign_key: true |
-| buyer_item | references | null: false, foreign_key: true |
+| admin_item | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
 - belongs_to :buyer_item
