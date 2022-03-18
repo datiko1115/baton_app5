@@ -1,5 +1,4 @@
 class AdminItemsController < ApplicationController
-  before_action :authenticate_admin!, only:[:show]
 
   def new
     @admin_item = AdminItem.new
@@ -13,6 +12,12 @@ class AdminItemsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @admin_item = AdminItem.find(params[:id])
+  end
+
+
 
   private
   def admin_item_params

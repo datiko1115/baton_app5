@@ -2,14 +2,14 @@
 <div class='main'>
   
   <div class='profile-contents'>
-    <h2 class='title'><%= @adminname %>さんの出品一覧</h2>
+    <h2 class='title'>買付可能商品</h2>
     <div class="subtitle" >
-      買付可能商品
+      新着買付可能商品
     </div>
     <ul class='item-lists'>
       <% @admin_items.each do |admin_item| %>
       <li class='list'> 
-        <%= link_to "#" do %>
+        <%= link_to admin_item_path(admin_item.id) do %>
         <div class='item-img-content'>
           <%= image_tag admin_item.images[0], class: "item-img" %>
           <%#if admin_item.order.present? %>
