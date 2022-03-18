@@ -1,4 +1,5 @@
 class AdminItemsController < ApplicationController
+  before_action :authenticate_admin!, only: [:new, :create]
 
   def new
     @admin_item = AdminItem.new
