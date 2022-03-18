@@ -1,0 +1,28 @@
+.admin-item-price-box {
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.admin-price-box {
+    align-items: center;
+    margin: 0px 20px;
+    display: grid;
+    text-align: center;
+}
+
+.allo {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.admin-item-price-proper {
+  font-size: 3vh;
+  font-weight: bold;
+  text-decoration: line-through;
+}
+
+.admin-item-price {
+  font-size: 4vh;
+  font-weight: bold;
+}

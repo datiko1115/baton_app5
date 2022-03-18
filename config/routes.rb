@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :admins, only: [:show]
   resources :users, only: [:show, :edit, :update] 
   resources :users, only: [:show]
-  resources :admin_items, only: [:new, :create,]
+  resources :admin_items, only: [:new, :create, :show]
   resources :items do
     resources :virtual_fittings, only: [:index]
     resources :orders, only: [:index, :create]
