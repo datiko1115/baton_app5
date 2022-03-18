@@ -9,6 +9,7 @@ require("channels")
 require("../price_calc")
 require("../card")
 require('../preview')
+require('../admin_preview')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
