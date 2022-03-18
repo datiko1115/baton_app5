@@ -7,23 +7,51 @@
       買付可能商品
     </div>
     <ul class='item-lists'>
-        <li class='list'>
-          <%= link_to '#' do %>
-          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-          <div class='item-info'>
-            <h3 class='item-name'>
-              商品を出品してね！
-            </h3>
-            <div class='item-price'>
-              <span>99999999円<br>(税込み)</span>
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
-              </div>
+      <% @admin_items.each do |admin_item| %>
+      <li class='list'> 
+        <%= link_to "#" do %>
+        <div class='item-img-content'>
+          <%= image_tag admin_item.images[0], class: "item-img" %>
+          <%#if admin_item.order.present? %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+          <%# end %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= admin_item.admin_item_name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= admin_item.price %>円<br></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
             </div>
           </div>
-          <% end %>
-        </li>
+        </div>
+        <% end %>
+      </li> 
+      <%end%>
+      <% if @admin_items.empty?  %>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            商品を出品してね！
+          </h3>
+          <div class='item-price'>
+            <span>99999999円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
     </ul>
   </div>
 </div>

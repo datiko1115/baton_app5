@@ -1,6 +1,6 @@
 class AdminItemsController < ApplicationController
   before_action :authenticate_admin!, only:[:show]
-  
+
   def new
     @admin_item = AdminItem.new
   end
