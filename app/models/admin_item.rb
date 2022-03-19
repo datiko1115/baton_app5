@@ -1,6 +1,7 @@
 class AdminItem < ApplicationRecord
   belongs_to :admin
   has_many_attached :images
+  has_one :buyer_order
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category

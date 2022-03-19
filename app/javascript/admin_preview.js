@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(){
   // 新規投稿・編集ページのフォームを取得
   const postForm = document.getElementById('admin-item-image');
-  console.log("ok")
+
   // プレビューを表示するためのスペースを取得
   const previewList = document.getElementById('previews');
-  console.log(postForm)
+ 
   // 新規投稿・編集ページのフォームがないならここで終了。「!」は論理否定演算子。
   if (!postForm) return null;
-  console.log("ok")
+ 
     // 投稿できる枚数の制限を定義
     const imageLimits = 5;
 
