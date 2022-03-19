@@ -1,7 +1,7 @@
 class BuyerOrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
-  #before_action :soldout_cant_be_bought, only:[:index, :create]
-  #before_action :are_you_seller?, only:[:index, :create]
+  before_action :soldout_cant_be_bought, only:[:index, :create]
+  before_action :are_you_admin?, only:[:create]
   before_action :authenticate_user!, only: [:index,:create]
 
   def index
@@ -28,17 +28,17 @@ class BuyerOrdersController < ApplicationController
     @admin_item = AdminItem.find(params[:admin_item_id])
   end
 
-  #def soldout_cant_be_bought
-    #if @admin_item.buyer_order.present?
-     #redirect_to root_path
-    #end
-  #end
+  def soldout_cant_be_bought
+    if @admin_item.buyer_order.present?
+     redirect_to root_path
+    end
+  end
   
-  #def are_you_seller?
-    #if @admin_item.admin == current_admin
-     #redirect_to items_path
-   # end
-  #end
+  def are_you_admin?
+    if current_admin
+     redirect_to buyer_items_path
+   end
+  end
 
   def pay_item       
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
