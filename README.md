@@ -5,7 +5,7 @@
 | ------------------ | ----------- | ------------------------------ |
 | email              | string      | null: false, unique: true      |
 | encrypted_password | text        | null: false                    |
-| admin_name       | integer     | null: false                    |
+| admin_name         | integer     | null: false                    |
 ### Association
 has_many :admin_items
 
@@ -27,6 +27,7 @@ has_many :admin_items
 - has_many :orders
 - has_many :admin_items
 - has_many :buyer_orders
+- has_many :virtual_fitting
 
 
 ## admin_itemsテーブル
@@ -45,14 +46,14 @@ has_many :admin_items
 - has_one :item
 
 
-## buyer_ordersテーブル
+## admin_ordersテーブル
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | user       | references | null: false, foreign_key: true |
 | admin_item | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
-- belongs_to :buyer_item
+- belongs_to :admin_item
 - has_one :buyer_address
 
 
@@ -81,10 +82,10 @@ has_many :admin_items
 | prefecture_id  | integer     | null: false                    |
 | shipment_id    | integer     | null: false                    |
 | user           | references  | null: false, foreign_key: true |
-| buyer_item     | references  | null: false, foreign_key: true |
+|admin_item     | references  | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
-- belongs_to :buyer_item
+- belongs_to :admin_item
 - has_one :order
 
 

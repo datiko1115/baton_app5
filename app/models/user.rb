@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :admin_items
   has_many :orders
+  has_many :buyer_orders
   has_many :virtual_fitting
   has_many_attached :images
 
@@ -19,6 +21,7 @@ class User < ApplicationRecord
   validates :last_kana, presence: true
   validates :birthday, presence: true
   validates :buyer_or_customer_id, presence: true
+  validates :user_comment, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers', on: :create
