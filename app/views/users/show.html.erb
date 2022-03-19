@@ -50,10 +50,33 @@
           投稿可能商品
         </div>
         <ul class='item-lists'>
-          <% @items.each do |item| %>
-            <%= render partial: "items/item", locals: { item: item } %>
+          <% current_user.buyer_orders.each do |items| %>
+            <li class='list'> 
+              <%= link_to "#" do %>
+              <div class='item-img-content'>
+                <%= image_tag items.admin_item.images[0], class: "item-img" %>
+                  <%#if item.order.present? %>
+                    <div class='sold-out'>
+                      <span>On Sale</span>
+                    </div>
+                  <%# end %>
+              </div>
+              <div class='item-info'>
+                <h3 class='item-name'>
+                  <%= items.admin_item.admin_item_name %>
+                </h3>
+                <div class='item-price'>
+                  <span><%= items.admin_item.price %>円<br>
+                  <div class='star-btn'>
+                    <%= image_tag "star.png", class:"star-icon" %>
+                    <span class='star-count'>0</span>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </li> 
           <%end%>
-          <% if @items.empty?  %>
+          <% if @buyer_orders.empty?  %>
             <li class='list'>
               <%= link_to '#' do %>
               <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>

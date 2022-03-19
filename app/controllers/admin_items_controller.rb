@@ -26,7 +26,7 @@ class AdminItemsController < ApplicationController
   end
 
   def customer_user_cant_do
-    if current_user.buyer_or_customer_id.to_s == "3"
+    if user_signed_in? && current_user.buyer_or_customer_id.to_s == "3"
      redirect_to root_path
     end
   end
