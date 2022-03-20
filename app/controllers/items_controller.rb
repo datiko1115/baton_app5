@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   before_action :ensure_correct_user, only:[:edit, :update, :destroy]
   before_action :soldout_cant_be_edited, only:[:edit, :update]
   before_action :customer_user_cant_sell, only:[:new, :create, :edit, :update, :destroy]
-  before_action :admin_cant_sell, only:[:new, :create, :edit, :update, :destroy]
 
   def index
     @items = Item.includes(:user).order("created_at DESC")
@@ -76,12 +75,6 @@ class ItemsController < ApplicationController
 
   def customer_user_cant_sell
     if user_signed_in? && current_user.buyer_or_customer_id.to_s == "3"
-     redirect_to root_path
-    end
-  end
-
-  def admin_cant_sell
-    if admin_signed_in?
      redirect_to root_path
     end
   end

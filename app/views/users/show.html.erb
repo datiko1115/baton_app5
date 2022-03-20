@@ -100,6 +100,7 @@
   <%end%>
   <%# /商品出品一覧 バイヤーユーザー %>
 </div>
+
   <% unless current_user.id.to_s == params[:id] && current_user.buyer_or_customer_id == 3%>
     <%= link_to(new_item_path, class: 'purchase-btn') do %>
       <span class='purchase-btn-text'>出品する</span>
