@@ -9,6 +9,19 @@
 
     <%= render 'shared/error_messages', model: f.object %>
 
+    <div class="form">
+      <div class="weight-bold-text">
+        出品するアイテム
+        <span class="indispensable">必須</span>
+      </div>
+        <select id="item-select", name="item[admin_item_id]" >
+          <option value="">出品するアイテムを選択してください</option>
+          <% current_user.buyer_orders.each do |item| %>
+            <option value=<%= item.admin_item.id %>><%= item.admin_item.admin_item_name %> / 購入価格 <%= item.admin_item.price %> 円 / プロパー価格 <%= item.admin_item.proper_price %> 円</option>
+          <% end %>
+        </select>
+    </div>
+
     <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -51,11 +64,6 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          商品の状態
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
     <%# /商品の詳細 %>
@@ -93,6 +101,22 @@
         <a class="question" href="#">?</a>
       </div>
       <div>
+      <%#javascriptで選択したプロパー価格を表示%>
+        <div class="price-content">
+          <span>プロパー価格</span>
+          <span>
+            <span id='add-proper-price'></span>円
+          </span>
+        </div>
+      <%#javascriptで選択したプロパー価格を表示%>
+      <%#javascriptで選択した購入価格を表示%>
+        <div class="price-content">
+          <span>購入価格</span>
+          <span>
+            <span id='add-bought-price'></span>円
+          </span>
+        </div>
+      <%#javascriptで選択した購入価格を表示%>
         <div class="price-content">
           <div class="price-text">
             <span>価格</span>

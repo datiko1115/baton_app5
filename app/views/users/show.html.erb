@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 <div class='main'>
-  <%#カレントユーザーのマイページで  かつそのカレントユーザーがカスタマーユーザーである時は出したくない%>
   <div class='profile-contents'>
     <h2 class='title'><%= @nickname %>さん</h2>
 
@@ -45,9 +44,9 @@
     </div>
     <% if current_user.id.to_s == params[:id] %>
       <div class='profile-contents'> 
-        <h2 class='title'><%= @nickname %>さんの買付品一覧</h2>
+        <h2 class='title'><%= @nickname %>さんがバイイングしたアイテム</h2>
         <div class="subtitle" >
-          投稿可能商品
+          最新投稿可能商品
         </div>
         <ul class='item-lists'>
           <% current_user.buyer_orders.each do |items| %>
@@ -55,18 +54,18 @@
               <%= link_to "#" do %>
               <div class='item-img-content'>
                 <%= image_tag items.admin_item.images[0], class: "item-img" %>
-                  <%#if item.order.present? %>
+                  <%if Item.exists?(admin_item_id: items.admin_item.id.to_s) %>
                     <div class='sold-out'>
                       <span>On Sale</span>
                     </div>
-                  <%# end %>
+                  <% end %>
               </div>
               <div class='item-info'>
                 <h3 class='item-name'>
                   <%= items.admin_item.admin_item_name %>
                 </h3>
                 <div class='item-price'>
-                  <span><%= items.admin_item.price %>円<br>
+                  <span><%= items.admin_item.proper_price %>円→<%= items.admin_item.price %>円</span>
                   <div class='star-btn'>
                     <%= image_tag "star.png", class:"star-icon" %>
                     <span class='star-count'>0</span>
@@ -101,10 +100,10 @@
   <%end%>
   <%# /商品出品一覧 バイヤーユーザー %>
 </div>
-<% unless current_user.id.to_s == params[:id] && current_user.buyer_or_customer_id == 3%>
-  <%= link_to(new_item_path, class: 'purchase-btn') do %>
-    <span class='purchase-btn-text'>出品する</span>
-    <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% unless current_user.id.to_s == params[:id] && current_user.buyer_or_customer_id == 3%>
+    <%= link_to(new_item_path, class: 'purchase-btn') do %>
+      <span class='purchase-btn-text'>出品する</span>
+      <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <% end %>
   <% end %>
-<% end %>
 <%= render "shared/footer" %>

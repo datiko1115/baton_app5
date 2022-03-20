@@ -5,7 +5,6 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.text :description,               null: false
       t.integer :category_id,            null: false
       t.integer :price,                  null: false
-      t.integer :condition_id,           null: false
       t.integer :recipient_id,           null: false
       t.integer :prefecture_id,          null: false
       t.integer :shipment_id,            null: false
