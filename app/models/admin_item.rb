@@ -1,7 +1,11 @@
 class AdminItem < ApplicationRecord
   belongs_to :admin
+  belongs_to :item
+  belongs_to :user
   has_many_attached :images
   has_one :buyer_order
+
+  
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category

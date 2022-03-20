@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @nickname = @user.nickname
     @items = @user.items
     @buyer_orders = BuyerOrder.where(user_id: current_user)
+    
   end
 
   def edit

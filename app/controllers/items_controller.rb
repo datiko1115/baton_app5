@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :ensure_correct_user, only:[:edit, :update, :destroy]
   before_action :soldout_cant_be_edited, only:[:edit, :update]
+  before_action :customer_user_cant_sell, only:[:new, :create, :edit, :update, :destroy]
 
   def index
     @items = Item.includes(:user).order("created_at DESC")
@@ -11,6 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @buyer_orders = BuyerOrder.where(user_id: current_user)
   end 
 
   def create
@@ -46,7 +48,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:item_name, :description, :category_id, :price, :condition_id, :recipient_id, :prefecture_id, :shipment_id, {images: []}).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name, :admin_item_id, :description, :category_id, :price, :condition_id, :recipient_id, :prefecture_id, :shipment_id, {images: []}).merge(user_id: current_user.id)
   end
 
   def set_item
@@ -67,6 +69,12 @@ class ItemsController < ApplicationController
 
   def soldout_cant_be_edited
     if @item.order.present?
+     redirect_to root_path
+    end
+  end
+
+  def customer_user_cant_sell
+    if user_signed_in? && current_user.buyer_or_customer_id.to_s == "3"
      redirect_to root_path
     end
   end
