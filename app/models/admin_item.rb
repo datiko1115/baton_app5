@@ -1,7 +1,5 @@
 class AdminItem < ApplicationRecord
   belongs_to :admin
-  #belongs_to :item
-  #belongs_to :user
   has_many_attached :images
   has_many_attached :vrf_images
   has_one :buyer_order
