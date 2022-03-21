@@ -13,33 +13,29 @@
       <% end %>
     </div>
   <%# baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaru %>
-    <%#= link_to "商品ページに戻る", item_path(@item.id), class:"item-destroy" %>
+    <%= link_to "商品ページに戻る", item_path(@item.id), class:"item-destroy" %>
 
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= "出品者名" %></td>
+          <th class="detail-item">身幅</th>
+          <td class="detail-value">cm</td>
         </tr>
         <tr>
-          <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= "カテゴリー名" %></td>
+          <th class="detail-item">肩幅</th>
+          <td class="detail-value">cm</td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= "商品の状態" %></td>
+          <th class="detail-item">着丈</th>
+          <td class="detail-value">cm</td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= "発送料の負担" %></td>
+          <th class="detail-item">袖丈</th>
+          <td class="detail-value">cm</td>
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= "発送元の地域" %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= "発送日の目安" %></td>
+          <th class="detail-item">裄丈</th>
+          <td class="detail-value">cm</td>
         </tr>
       </tbody>
     </table>
