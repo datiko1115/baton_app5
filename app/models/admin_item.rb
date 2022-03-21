@@ -3,6 +3,7 @@ class AdminItem < ApplicationRecord
   #belongs_to :item
   #belongs_to :user
   has_many_attached :images
+  has_many_attached :vrf_images
   has_one :buyer_order
 
   
@@ -25,5 +26,6 @@ class AdminItem < ApplicationRecord
   validates :price, numericality: { only_integer: true } 
 
   validates :images, presence: true
-  validates :images, length: { minimum: 1, maximum: 5 }
+  validates :images, length: { minimum: 1, maximum: 6 }
+  validates :vrf_images, length: { minimum: 1, maximum: 6 }
 end
