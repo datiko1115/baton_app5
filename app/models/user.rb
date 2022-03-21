@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
-  has_many :admin_items
+  #has_many :admin_items
   has_many :orders
   has_many :buyer_orders
   has_many :virtual_fitting
