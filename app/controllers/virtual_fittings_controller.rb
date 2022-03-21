@@ -4,8 +4,10 @@ class VirtualFittingsController < ApplicationController
       redirect_to root_path
     else
       @item = Item.find(params[:item_id])
+      admin_item = AdminItem.find(@item.admin_item_id.to_s)
+
       user_image = MiniMagick::Image.open(rails_blob_url(current_user.images[0]))
-      item_image = MiniMagick::Image.open(rails_blob_url(@item.images[4])) 
+      item_image = MiniMagick::Image.open(rails_blob_url(admin_item.vrf_images[0])) 
 
       result = user_image.composite(item_image) do |config| 
         config.compose 'Over'

@@ -22,7 +22,7 @@ class AdminItemsController < ApplicationController
 
   private
   def admin_item_params
-    params.require(:admin_item).permit(:admin_item_name, :admin_description, :category_id, :proper_price, :price, {images: []}).merge(admin_id: current_admin.id)
+    params.require(:admin_item).permit(:admin_item_name, :admin_description, :category_id, :proper_price, :price, {vrf_images: []}, {images: []}).merge(admin_id: current_admin.id)
   end
 
   def customer_user_cant_do

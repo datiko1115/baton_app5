@@ -23,6 +23,19 @@
       </p>
       <%= f.file_field :images, name: 'admin_item[images][]', data: {index: 0}, id:"admin-item-image" %>
     </div>
+    <div class="vrf-img-upload">
+      <div class="weight-bold-text">
+        バーチャルフィッティング画像
+        <span class="indispensable">必須</span>
+        <div id="previews"></div>
+      </div>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :vrf_images, name: 'admin_item[vrf_images][]', data: {index: 0}, id:"adminitem-image" %>
+    </div>
     <%# /商品画像 %>
     <%# 商品名と商品説明 %> 
     <div class="new-items">
