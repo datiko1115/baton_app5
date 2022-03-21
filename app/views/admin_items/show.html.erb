@@ -34,7 +34,7 @@
         </span>
       </div>
     </div>
-    <% if admin_signed_in? && current_admin.id == current_admin.admin_id %>
+    <% if admin_signed_in? && current_admin.id.to_s == @admin_item.admin_id.to_s %>
      <%unless @admin_item.buyer_order.present? %>
       <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
       <p class="or-text">or</p>
