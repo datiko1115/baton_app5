@@ -17,7 +17,11 @@
         <select id="item-select", name="item[admin_item_id]" >
           <option value="">出品するアイテムを選択してください</option>
           <% current_user.buyer_orders.each do |item| %>
-            <option value=<%= item.admin_item.id %>><%= item.admin_item.admin_item_name %> / 購入価格 <%= item.admin_item.price %> 円 / プロパー価格 <%= item.admin_item.proper_price %> 円</option>
+            <%#すでに出品してるものは出さない%>
+            <%unless Item.exists?(admin_item_id: item.admin_item.id.to_s) %>
+              <option value=<%= item.admin_item.id %>><%= item.admin_item.admin_item_name %> / 購入価格 <%= item.admin_item.price %> 円 / プロパー価格 <%= item.admin_item.proper_price %> 円</option>
+            <% end %>
+            <%#すでに出品してるものは出さない%>
           <% end %>
         </select>
     </div>
