@@ -4,7 +4,7 @@
     <h2 class="name">
       <%= "バーチャル試着機能" %>
     </h2>
-  <%# baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaru %>
+
     <div class="virtual-wrap">
       <% if Rails.env.production? %>
         <%= image_tag "/assets/virtualfitting#{current_user.id}.jpg", class: "virtual-image1" %>
@@ -12,7 +12,7 @@
         <img src="/images/virtualfitting<%= current_user.id %>.jpg" class="virtual-image1">
       <% end %>
     </div>
-  <%# baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaatyaru %>
+
     <%= link_to "商品ページに戻る", item_path(@item.id), class:"item-destroy" %>
 
     <table class="detail-table">
