@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
   before_action :ensure_correct_user, only:[:edit, :update, :destroy]
   before_action :soldout_cant_be_edited, only:[:edit, :update]
   before_action :customer_user_cant_sell, only:[:new, :create, :edit, :update, :destroy]
+  
+  
 
   def index
     @items = Item.includes(:user).order("created_at DESC")

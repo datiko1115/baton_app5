@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
   before_action :soldout_cant_be_bought, only:[:index, :create]
   before_action :are_you_seller?, only:[:index, :create]
   before_action :authenticate_user!, only: [:index,:create]
+  before_action :buyer_user_cant_buy, only: [:create]
+
 
   def index
     @address_order = AddressOrder.new
@@ -38,6 +40,12 @@ class OrdersController < ApplicationController
     if @item.user == current_user
      redirect_to items_path
     end
+  end
+
+  def buyer_user_cant_buy
+    if user_signed_in? && current_user.buyer_or_customer_id.to_s == !"3"
+      redirect_to root_path
+     end
   end
 
   def pay_item       
