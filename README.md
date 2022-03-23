@@ -87,7 +87,7 @@ https://docs.google.com/spreadsheets/d/1g1XmWcnw1I4A6_34Eo6WzUSxUGyZ2yH3wkerSS5D
 <br>
 
 [![Image from Gyazo](https://i.gyazo.com/cc4e586754ff4725446247974c8aa2c1.gif)](https://gyazo.com/cc4e586754ff4725446247974c8aa2c1)
-バイヤーユーザーの場合は、通常の出品一覧の下に『買付可能品一覧』が出ますのでその中から買い付けたい商品を購入できます。
+バイヤーユーザーの場合は、通常の出品一覧の下に『買付可能品一覧』が出ますのでその中から買い付けたい商品を購入できます。<br>
 <br>
 
 [![Image from Gyazo](https://i.gyazo.com/5b658a3cd86b7a3e84b2d2cd0ab5ea07.gif)](https://gyazo.com/5b658a3cd86b7a3e84b2d2cd0ab5ea07)
