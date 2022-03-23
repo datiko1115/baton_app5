@@ -43,7 +43,7 @@
     <% elsif user_signed_in?%>
       <%unless @admin_item.buyer_order.present? %>
         <%= link_to "購入画面に進む", admin_item_buyer_orders_path(@admin_item.id),class:"item-red-btn"%>
-        <%= link_to "バーチャル試着を試す", "#", class:"item-destroy" %>
+        <%= link_to "バーチャル試着を試す(バイヤー側では未実装です)", "#", class:"item-destroy" %>
       <% end %>
     <% end %>
 
