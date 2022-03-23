@@ -86,7 +86,7 @@ https://docs.google.com/spreadsheets/d/1g1XmWcnw1I4A6_34Eo6WzUSxUGyZ2yH3wkerSS5D
 トップページのヘッダーからログイン、新規登録（登録画面にてバイヤーユーザー若しくはカスタマーユーザーを選択します。）が可能です<br>
 <br>
 
-[![Image from Gyazo](https://i.gyazo.com/cc4e586754ff4725446247974c8aa2c1.gif)](https://gyazo.com/cc4e586754ff4725446247974c8aa2c1)
+[![Image from Gyazo](https://i.gyazo.com/3796ab67e204f441dfa1c058cdd3d71a.gif)](https://gyazo.com/3796ab67e204f441dfa1c058cdd3d71a)
 バイヤーユーザーの場合は、通常の出品一覧の下に『買付可能品一覧』が出ますのでその中から買い付けたい商品を購入できます。<br>
 <br>
 
