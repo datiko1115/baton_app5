@@ -9,14 +9,17 @@ https://baton-app5-37562.herokuapp.com/
 
 # テスト用アカウント
 ### 管理者ユーザー
+※headerからログイン
 email : aaaa@aaaa
 pass : aaa111
 
 ### バイヤーユーザー
+※headerからログイン
 email : bbbb@bbbb
 pass : bbb111
 
 ### カスタマーユーザー
+※footerからログイン
 email : cccc@cccc
 pass : ccc111
 
