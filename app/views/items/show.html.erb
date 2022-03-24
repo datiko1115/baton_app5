@@ -28,14 +28,14 @@
 
     <% if user_signed_in? && current_user.id == @item.user_id %>
      <%unless @item.order.present? %>
-      <%= link_to "商品の編集", edit_item_path, method: :get, class: "item-red-btn" %>
+      <%= link_to "EDITする", edit_item_path, method: :get, class: "item-red-btn" %>
       <p class="or-text">or</p>
-      <%= link_to "削除", item_path, method: :delete, class:"item-destroy" %>
+      <%= link_to "DELETEする", item_path, method: :delete, class:"item-destroy" %>
      <% end %>
     <% elsif  user_signed_in?%>
       <%unless @item.order.present? %>
-        <%= link_to "購入画面に進む", item_orders_path(@item.id),class:"item-red-btn"%>
-        <%= link_to "バーチャル試着を試す", item_virtual_fittings_path(@item.id), class:"item-destroy" %>
+        <%= link_to "購入画面へ", item_orders_path(@item.id),class:"item-red-btn"%>
+        <%= link_to "バーチャルフィッティングを試す", item_virtual_fittings_path(@item.id), class:"item-destroy" %>
       <% end %>
     <% end %>
 
