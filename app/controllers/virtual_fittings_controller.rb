@@ -8,6 +8,8 @@ class VirtualFittingsController < ApplicationController
 
       user_image = MiniMagick::Image.open(rails_blob_url(current_user.images[0]))
       item_image = MiniMagick::Image.open(rails_blob_url(admin_item.vrf_images[0])) 
+      
+      user_image.auto_orient
 
       result = user_image.composite(item_image) do |config| 
         config.compose 'Over'
