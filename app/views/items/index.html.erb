@@ -4,7 +4,7 @@
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      あなたの人生を変えるフリマアプリ
+      Change your life with this APP
     </h2>
     <p class='service-explain'>
        空いた時間で "簡単買付 → 簡単販売" 2STEP で "簡単副業"
@@ -133,9 +133,9 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+    <h2 class='title'>PICK UP CATEGORYS</h2>
     <div class="subtitle" >
-      新規投稿商品
+      New Posts
     </div>
     <ul class='item-lists'>
       <% @items.each do |item| %>
@@ -167,9 +167,9 @@
   <%# 買付可能商品一覧 %>
   <% if user_signed_in? && current_user.buyer_or_customer_id.to_s != "3" || current_admin %>
   <div class='item-contents'>
-    <h2 class='title'>買付可能品一覧</h2>
+    <h2 class='title'>BUYABLE BUYING ITEMS</h2>
     <div class="subtitle" >
-      新規投稿商品
+      New Posts
     </div>
     <ul class='item-lists'>
       <% @admin_items.each do |admin_item| %>
