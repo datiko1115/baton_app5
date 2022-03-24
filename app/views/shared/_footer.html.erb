@@ -42,9 +42,9 @@
     <ul class='lists-right1'>
       <% if admin_signed_in? %>
         <li><%= link_to current_admin.admin_name, admin_path(current_admin), class: "company-login" %></li>
-        <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "company-login" %></li>
+        <li><%= link_to 'サインアウト', destroy_admin_session_path, method: :delete, class: "company-login" %></li>
       <% else %>
-        <li><%= link_to '※企業様はこちらからログイン', new_admin_session_path, class: "company-login" %></li>
+        <li><%= link_to '※企業様はこちらからサインイン', new_admin_session_path, class: "company-login" %></li>
         <li><%= link_to '※企業新規登録', new_admin_registration_path, class: "company-login" %></li>
       <% end %>                    
     </ul>
