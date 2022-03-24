@@ -9,19 +9,19 @@ https://baton-app5-37562.herokuapp.com/
 
 # テスト用アカウント
 ### 管理者ユーザー
-※footerからログイン
-email : aaaa@aaaa
-pass : aaa111
+※footerからログイン<br>
+email : aaaa@aaaa<br>
+pass : aaa111<br>
 
 ### バイヤーユーザー
-※headerからログイン
-email : bbbb@bbbb
-pass : bbb111
+※headerからログイン<br>
+email : bbbb@bbbb<br>
+pass : bbb111<br>
 
 ### カスタマーユーザー
-※headerからログイン
-email : cccc@cccc
-pass : ccc111
+※headerからログイン<br>
+email : cccc@cccc<br>
+pass : ccc111<br>
 
 # 利用方法
 ## 概要
@@ -76,7 +76,7 @@ https://docs.google.com/spreadsheets/d/1g1XmWcnw1I4A6_34Eo6WzUSxUGyZ2yH3wkerSS5D
 # 実装した機能についての画像やGIFおよびその説明
 ## -管理者ユーザー<br>
 [![Image from Gyazo](https://i.gyazo.com/757c677786f0f587c1aeae3d5cca1bfa.gif)](https://gyazo.com/757c677786f0f587c1aeae3d5cca1bfa)
-トップページのフッターからログイン、新規登録が可能です<br>
+トップページのfooterからログイン、新規登録が可能です<br>
 <br>
 
 [![Image from Gyazo](https://i.gyazo.com/dabfc239455925a83cb8014226bbefcc.gif)](https://gyazo.com/dabfc239455925a83cb8014226bbefcc)
@@ -86,7 +86,7 @@ https://docs.google.com/spreadsheets/d/1g1XmWcnw1I4A6_34Eo6WzUSxUGyZ2yH3wkerSS5D
 
 ## -バイヤーユーザー
 [![Image from Gyazo](https://i.gyazo.com/0849c24b6501301829609a3a70446c97.gif)](https://gyazo.com/0849c24b6501301829609a3a70446c97)
-トップページのヘッダーからログイン、新規登録（登録画面にてバイヤーユーザー若しくはカスタマーユーザーを選択します。）が可能です<br>
+トップページのheaderからログイン、新規登録（登録画面にてバイヤーユーザー若しくはカスタマーユーザーを選択します。）が可能です<br>
 <br>
 
 [![Image from Gyazo](https://i.gyazo.com/3796ab67e204f441dfa1c058cdd3d71a.gif)](https://gyazo.com/3796ab67e204f441dfa1c058cdd3d71a)
@@ -98,7 +98,7 @@ https://docs.google.com/spreadsheets/d/1g1XmWcnw1I4A6_34Eo6WzUSxUGyZ2yH3wkerSS5D
 <br>
 
 ## -カスタマーユーザー
-カスタマーユーザーも同じくトップページ上部からログイン、新規登録することが出来ます。（登録画面にてバイヤーユーザー若しくはカスタマーユーザーを選択します。）<br>
+カスタマーユーザーも同じくheaderからログイン、新規登録することが出来ます。（登録画面にてバイヤーユーザー若しくはカスタマーユーザーを選択します。）<br>
 <br>
 [![Image from Gyazo](https://i.gyazo.com/38f2fb94b78484ebca4bfd372296257d.gif)](https://gyazo.com/38f2fb94b78484ebca4bfd372296257d)
 ピックアップカテゴリーから商品詳細ページに進む事が出来、購入ページに遷移する事が出来ます。<br>
