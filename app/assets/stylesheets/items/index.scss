@@ -37,7 +37,7 @@ a {
 }
 
 .service-explain2 {
-  font-size: 3.5vh;
+  font-size: 3.2vh;
   line-height: 40px;
 }
 
@@ -88,7 +88,7 @@ a {
 }
 
 .reason-lists>.list {
-  width: 33vh;
+  width: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +97,7 @@ a {
 }
 
 .list-pict {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 100%;
 
 }
@@ -117,8 +117,9 @@ a {
 
 .reason-list-text {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 50px;
+  text-align:center;
 }
 
 .reason-list-blue-text {
@@ -126,7 +127,7 @@ a {
 }
 
 .reason-list-description {
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 20px;
 }
 
@@ -149,6 +150,7 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
+
 .ad-title {
   font-size: 5vh;
   margin-bottom: 2vh;
@@ -157,6 +159,24 @@ a {
 .ad-explain {
   font-size: 2.5vh;
   line-height: 30px;
+  margin-bottom: 5px;
+}
+
+.ad-explain-allo {
+  font-size: 3vh;
+  margin-left: 180px;
+}
+
+.ad-explain1 {
+  font-size: 3vh;
+  line-height: 30px;
+  margin: 5px;
+}
+
+.ad-explain2 {
+  font-size: 3.5vh;
+  line-height: 30px;
+  margin: 5px;
 }
 
 .store-btn {
