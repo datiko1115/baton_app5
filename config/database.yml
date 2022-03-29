@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: baton_app5_production
-  username: baton_app5
-  password: <%= ENV['FURIMA_37562_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
