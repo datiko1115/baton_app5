@@ -8,8 +8,8 @@ class VirtualFittingsController < ApplicationController
       puts '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
       logger.info(rails_blob_url(current_user.images[0]))
       logger.error(rails_blob_url(current_user.images[0]))
-      user_image = MiniMagick::Image.open(rails_blob_path(current_user.images[0]))
-      item_image = MiniMagick::Image.open(rails_blob_path(admin_item.vrf_images[0])) 
+      user_image = MiniMagick::Image.open(rails_blob_url(current_user.images[0]))
+      item_image = MiniMagick::Image.open(rails_blob_url(admin_item.vrf_images[0])) 
       
       user_image.auto_orient
 
