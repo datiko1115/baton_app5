@@ -6,8 +6,8 @@ class VirtualFittingsController < ApplicationController
       @item = Item.find(params[:item_id])
       admin_item = AdminItem.find(@item.admin_item_id.to_s)
       puts '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-      logger.info(rails_blob_url(current_user.images[0]))
-      logger.error(rails_blob_url(current_user.images[0]))
+      logger.info(rails_blob_path(current_user.images[0]))
+      logger.error(rails_blob_path(current_user.images[0]))
       current_user_image = rails_blob_url(current_user.images[0])
       admin_item_vrf_image = rails_blob_url(admin_item.vrf_images[0])
       user_image = MiniMagick::Image.open(current_user_image)
