@@ -5,6 +5,7 @@ class VirtualFittingsController < ApplicationController
     else
       @item = Item.find(params[:item_id])
       admin_item = AdminItem.find(@item.admin_item_id.to_s)
+
       current_user_image = current_user.images[0]
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{current_user_image}"
       user_img = rails_blob_url(current_user_image, host: request.base_url)
@@ -16,6 +17,7 @@ class VirtualFittingsController < ApplicationController
       item_image = MiniMagick::Image.open(item_img)
 
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+
 
       user_image.auto_orient
 
