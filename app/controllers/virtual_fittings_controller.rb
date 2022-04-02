@@ -7,27 +7,27 @@ class VirtualFittingsController < ApplicationController
       admin_item = AdminItem.find(@item.admin_item_id.to_s)
       current_user_image = current_user.images[0]
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{current_user_image}"
-      user_img = rails_blob_url(current_user_image)
+      user_img = rails_blob_url(current_user_image, host: request.base_url)
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{user_img}"
-      item_img = rails_blob_url(admin_item.vrf_images[0])
+      item_img = rails_blob_url(admin_item.vrf_images[0], host: request.base_url)
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{item_img}"
 
       user_image = MiniMagick::Image.open(user_img)
-      item_image = MiniMagick::Image.open(item_img) 
+      item_image = MiniMagick::Image.open(item_img)
 
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-      
+
       user_image.auto_orient
 
-      result = user_image.composite(item_image) do |config| 
+      result = user_image.composite(item_image) do |config|
         config.compose 'Over'
         config.gravity 'NorthWest'
         config.geometry '+0+0'
       end
-      result.format("jpg") 
-      if Rails.env.production? 
+      result.format("jpg")
+      if Rails.env.production?
         result.write("public/assets/virtualfitting#{current_user.id}.jpg")
-      else 
+      else
         result.write("public/images/virtualfitting#{current_user.id}.jpg")
       end
     end
