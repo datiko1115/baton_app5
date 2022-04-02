@@ -3,7 +3,7 @@ lock '3.17.0'
 
 # Capistranoのログの表示に利用する
 set :application, 'baton_app5'
-
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:datiko1115/baton_app5.git'
 
