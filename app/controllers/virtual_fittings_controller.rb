@@ -38,8 +38,9 @@ class VirtualFittingsController < ApplicationController
         config.compose 'Over'
         config.gravity 'NorthWest'
         config.geometry '+0+0'
-        logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{config}"
       end
+
+      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{config}"
 
       result.format("jpg")
       if Rails.env.production?
