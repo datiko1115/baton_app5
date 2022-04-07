@@ -7,9 +7,9 @@
 
     <div class="virtual-wrap">
       <% if Rails.env.production? %>
-        <%= image_tag "current/public/assets/virtualfitting#{current_user.id}.jpg", class: "virtual-image1" %>
+        <%= image_tag "/assets/virtualfitting#{current_user.id}.jpg", class: "virtual-image1" %>
       <% else %>
-        <img src="/images/virtualfitting<%= current_user.id %>.jpg" class="virtual-image1">
+        <img src="/current/public/images/virtualfitting<%= current_user.id %>.jpg" class="virtual-image1">
       <% end %>
     </div>
 
