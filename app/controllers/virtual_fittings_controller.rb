@@ -18,7 +18,9 @@ class VirtualFittingsController < ApplicationController
       # item_image = MiniMagick::Image.open(item_img)
 
       user_image = MiniMagick::Image.read(current_user.images[0].download)
+      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{user_image}"
       item_image = MiniMagick::Image.read(admin_item.vrf_images[0].download)
+      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{item_image}"
 
       # user_image = MiniMagick::Image.open(File.join("http://localhost:3000",user_img))
       # item_image = MiniMagick::Image.open(File.join("http://localhost:3000",item_img))
