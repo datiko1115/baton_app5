@@ -6,16 +6,19 @@ class VirtualFittingsController < ApplicationController
       @item = Item.find(params[:item_id])
       admin_item = AdminItem.find(@item.admin_item_id.to_s)
 
-      current_user_image = current_user.images[0]
-      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{current_user_image}"
-      user_img = rails_blob_url(current_user_image, host: request.base_url)
-      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{user_img}"
-      item_img = rails_blob_url(admin_item.vrf_images[0], host: request.base_url)
-      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{item_img}"
+      # current_user_image = current_user.images[0]
+      # logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{current_user_image}"
+      # user_img = rails_blob_url(current_user_image, host: request.base_url)
+      # logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{user_img}"
+      # item_img = rails_blob_url(admin_item.vrf_images[0], host: request.base_url)
+      # logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{item_img}"
 
 
-      user_image = MiniMagick::Image.read(user_img.download)
-      item_image = MiniMagick::Image.read(item_img.download)
+      # user_image = MiniMagick::Image.open(user_img)
+      # item_image = MiniMagick::Image.open(item_img)
+
+      user_image = MiniMagick::Image.read(current_user.images[0].download)
+      item_image = MiniMagick::Image.read(admin_item.vrf_images[0].download)
 
       # user_image = MiniMagick::Image.open(File.join("http://localhost:3000",user_img))
       # item_image = MiniMagick::Image.open(File.join("http://localhost:3000",item_img))
