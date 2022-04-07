@@ -8,9 +8,9 @@ class VirtualFittingsController < ApplicationController
 
       current_user_image = current_user.images[0]
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{current_user_image}"
-      user_img = rails_blob_path(current_user_image, host: request.base_url)
+      user_img = rails_blob_url(current_user_image, host: request.base_url)
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{user_img}"
-      item_img = rails_blob_path(admin_item.vrf_images[0], host: request.base_url)
+      item_img = rails_blob_url(admin_item.vrf_images[0], host: request.base_url)
       logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{item_img}"
 
       user_image = MiniMagick::Image.open(user_img)
