@@ -32,15 +32,19 @@ class VirtualFittingsController < ApplicationController
 
 
       user_image.auto_orient
+      logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{user_image}"
 
       result = user_image.composite(item_image) do |config|
         config.compose 'Over'
         config.gravity 'NorthWest'
         config.geometry '+0+0'
+        logger.debug "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#{config}"
       end
+
       result.format("jpg")
       if Rails.env.production?
         result.write("public/assets/virtualfitting#{current_user.id}.jpg")
+        logger.debug "http://54.168.8.242/assets/virtualfitting#{current_user.id}.jpg"
       else
         result.write("public/images/virtualfitting#{current_user.id}.jpg")
       end
