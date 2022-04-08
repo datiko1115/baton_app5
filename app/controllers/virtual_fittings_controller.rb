@@ -45,7 +45,7 @@ class VirtualFittingsController < ApplicationController
       result.format("jpg")
       if Rails.env.production? 
         result.write("public/assets/virtualfitting#{current_user.id}.jpg")
-        result.chmod（0644）
+        result.chmod(0644)
         logger.debug "http://54.168.8.242/assets/virtualfitting#{current_user.id}.jpg"
       else
         result.write("public/images/virtualfitting#{current_user.id}.jpg")
