@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :items do
-    resources :virtual_fittings, only: :index
+    resources :virtual_fittings, only: [:index]
     resources :orders, only: [:index, :create]
     resources :comments, only: :create
   end
