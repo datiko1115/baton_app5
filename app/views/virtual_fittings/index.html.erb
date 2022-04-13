@@ -7,7 +7,7 @@
 
     <div class="virtual-wrap">
       <% if Rails.env.production? %>
-        <%= image_tag "/images/virtualfitting#{current_user.id}.jpg", class: "virtual-image1" %>
+        <%= image_tag "/public/images/virtualfitting#{current_user.id}.jpg", class: "virtual-image1" %>
       <% else %>
         <img src="/images/virtualfitting<%= current_user.id %>.jpg" class="virtual-image1">
       <% end %>
@@ -52,20 +52,7 @@
   </div>
   <%# /商品の概要 %>
 
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
+
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
